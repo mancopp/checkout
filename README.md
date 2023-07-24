@@ -1,66 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Checkout
 
-## About Laravel
+This is a web application built using Laravel, Vue.js, and Tailwind CSS to provide a feature-rich and user-friendly checkout form. The checkout form allows customers to input various details related to their account, personal data, delivery address, and choose delivery and payment methods. Additionally, customers have the option to apply discount codes to avail discounts. The form validates user inputs both on the frontend and backend, ensuring data integrity and a seamless user experience.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Table of Contents
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [Technologies Used](#technologies-used)
+- [Additional Features](#additional-features)
+- [Installation & Usage](#installation-and-usage)
+- [Technologies Used](#technologies-used)
+- ["Most Changes" Folders](#most-changes-folders)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Technologies Used
 
-## Learning Laravel
+- Laravel v10.10 - A powerful PHP framework for building web applications.
+- Vue.js v3.2 - A progressive JavaScript framework for building user interfaces.
+- Tailwind CSS v3.3 - A utility-first CSS framework for creating custom and responsive designs.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Additional Features
+- **Login:** Button "Log in" shows the login modal
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Tests:** Tests are included in project's source
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Discount Code:** Customers have the option to apply a discount code during checkout to avail discounts.
 
-## Laravel Sponsors
+- **Frontend Validation:** User inputs are validated on the frontend to provide immediate feedback to users and prevent invalid data submissions.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- **Backend Validation:** The submitted data is validated on the backend to ensure data integrity and security.
 
-### Premium Partners
+## Installation and Usage
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+#### Install dependencies
 
-## Contributing
+1. Install front-end dependencies
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+npm i
+```
 
-## Code of Conduct
+2. Install back-end dependencies
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+composer update
+```
 
-## Security Vulnerabilities
+#### Set up the environment
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. Edit database credentials in `.env.example` and rename the file to `.env`
+4. Generate an app key
 
-## License
+```bash
+php artisan key:generate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5. Execute database migrations
+
+```bash
+php artisan migrate
+```
+
+6. Seed the database with necessary data
+
+```bash
+php artisan db:seed --class=InitialSeeder
+```
+
+#### Run
+
+7. Start the back-end server
+
+```bash
+php artisan serve
+```
+
+8. Start the front-end server
+
+```bash
+npm run dev
+```
+
+#### Tests
+
+To run all the tests:
+
+```bash
+php artisan test
+```
+
+## "Most Changes" Folders
+
+```
+laravel-project/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   └── Models/
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── resources/
+│   ├── css/
+│   ├── js/
+│   └── views/
+└── tests/
+```
